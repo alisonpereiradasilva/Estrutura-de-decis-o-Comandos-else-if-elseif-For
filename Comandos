@@ -1,0 +1,59 @@
+Estrutura de decisão - Comandos else if / elseif / For
+
+<?php
+/* Método Errado com dois pontos */
+if($a > $b):
+    echo $a." é maior que ".$b;
+else if($a == $b): // Não será compilado.
+    echo "A linha acima faz com que um erro de análise.";
+endif;
+----------------------------------------------------------------------------------------------------
+/* Método Correto com dois pontos */
+if($a > $b):
+    echo $a." e maior que ".$b;
+elseif($a == $b): // Combinação correta das palavras.
+    echo $a." é igual a ".$b;
+else:
+    echo $a." não é maior do que ou igual a ".$b;
+endif;
+----------------------------------------------------------------------------------------------------
+/* Método Correto com chaves */
+if($a > $b) {
+    echo $a." e maior que ".$b;
+}elseif($a == $b) {
+    echo $a." é igual a ".$b;
+} else {
+    echo $a." não é maior do que ou igual a ".$b;
+}
+?>
+//#################################################################
+Estrutura de repetição e controle  - Comandos for
+//Simples For
+<?php
+for($i =1; $i < 20; $i++){
+echo "O Valor de I = ".$id,"<br>";
+}
+----------------------------------------------------------------------------------------------------
+//For com contador de Array
+$carros = array('Mercedes Benz','Porche','BMW','Lamborguini','Ferrari','Jeep'); 
+for($posicao = 0; $posicao < count($carros); $posicao++) { 
+echo "O carro da posição: " . $posicao . " é " . $carros[$posicao] . "<br>"; 
+} 
+----------------------------------------------------------------------------------------------------
+//Array de repetição com String
+ $frase = "Esta frase será repetida 10 vezes";
+ for($i=0; $i<=10; $i++)
+ {
+   echo $i." - ".$frase,"<br>";
+ }
+-----------------------------------------------------------------------------------------------------
+// For com iteração de lista (ul - Lista não ordenada)
+$alunos = array("Alison Silva", "Jose da Silva", "Fulano", "Ciclano", "Beltrano",);
+  echo "Lista de alunos 2016";
+  echo "<br>"; echo "<ul>";
+  for($i=0; $i<count($alunos); $i++)
+  {
+     echo "<li>".$alunos[$i]."</li>";
+  } 
+  echo "</ul>";
+?>
